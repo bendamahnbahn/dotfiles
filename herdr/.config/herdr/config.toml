@@ -1,0 +1,43 @@
+onboarding = false
+
+[theme]
+# Match tmux status bar styling
+name = "terminal"
+
+[terminal]
+# Bigger scrollback like tmux (10000 lines)
+# Note: Herdr uses headless_rows for virtual terminal height
+
+[keys]
+# Prefix key: Changed from default Ctrl+b to Ctrl+a (matching tmux)
+prefix = "ctrl+a"
+
+# Prefix-mode actions (mapped to tmux equivalents)
+# Navigation (vim-style hjkl - already defaults but explicit here)
+focus_pane_left = "prefix+h"      # tmux: bind -r h select-pane -L
+focus_pane_down = "prefix+j"      # tmux: bind -r j select-pane -D
+focus_pane_up = "prefix+k"        # tmux: bind -r k select-pane -U
+focus_pane_right = "prefix+l"     # tmux: bind -r l select-pane -R
+
+# Splits (matching tmux splits)
+split_vertical = "prefix+shift+backslash" # tmux: bind | split-window -h
+split_horizontal = "prefix+minus" # tmux: bind - split-window -v
+
+# Window/Tab management (mapped to tmux equivalents)
+new_tab = "prefix+c"              # tmux: bind c new-window
+close_tab = "prefix+shift+x"      # tmux: bind x kill-pane (using close_tab for consistency)
+close_pane = "prefix+x"           # tmux: bind x kill-pane
+
+# Resize (vim-style uppercase letters matching tmux)
+resize_pane_left = "prefix+shift+h"   # tmux: bind -r H resize-pane -L 5
+resize_pane_down = "prefix+shift+j"   # tmux: bind -r J resize-pane -D 5
+resize_pane_up = "prefix+shift+k"     # tmux: bind -r K resize-pane -U 5
+resize_pane_right = "prefix+shift+l"  # tmux: bind -r L resize-pane -R 5
+
+[ui]
+# Enable mouse support (matching tmux: set -g mouse on)
+mouse_capture = true
+copy_on_select = true
+
+# Theme matches tmux status bar: black background, white foreground
+# Status bar styling is handled by theme above

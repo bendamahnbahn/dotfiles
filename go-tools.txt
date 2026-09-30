@@ -1,0 +1,2 @@
+github.com/kisielk/errcheck
+github.com/maaslalani/slides

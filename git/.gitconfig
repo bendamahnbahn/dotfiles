@@ -1,0 +1,12 @@
+[user]
+    name = BenTechCoder
+    email = benjaminnlebron@gmail.com
+[credential]
+	helper = store
+[includeIf "gitdir:~/dev/"]
+	path = ~/.gitconfig-personal
+
+[includeIf "gitdir:~/bethel/"]
+	path = ~/.gitconfig-bethel
+[safe]
+	directory = /src
