@@ -70,6 +70,10 @@ Re-running `./bootstrap.sh` is always safe.
    every file the app writes lands in git.
 4. *Machine-local / experimental / secret* → `~/.profile.d/99-local.sh`. Sourced automatically, tracked by nobody.
 
+**Pre-commit hook (tracked, `.githooks/pre-commit`).** Runs `gitleaks` on staged changes and rejects any
+employer-specific strings — this repo is public. `bootstrap.sh` activates it with `git config core.hooksPath .githooks`;
+on a clone where you haven't run bootstrap, run that line once. Bypass is `git commit --no-verify` — don't.
+
 **Health check**
 ```sh
 stow --no-folding -n -v -R -t ~ zsh git tmux mise k9s herdr ohmyposh claude kiro   # should report nothing to do
