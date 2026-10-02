@@ -19,6 +19,16 @@ git clone <this repo> ~/dev/dotfiles && cd ~/dev/dotfiles && ./bootstrap.sh
 ```
 Re-running is safe. Stow refuses to overwrite existing files — move them aside first.
 
+## Publishing / first push
+Create an empty public repo on GitHub (no README/.gitignore — this repo has them), then:
+```sh
+gitleaks detect --source . --no-git            # must be clean
+git remote add origin git@github.com:<you>/dotfiles.git
+git push -u origin main
+```
+Employer-specific config is *not* in this repo by design — it lives in a separate private repo that stows
+into the same `$HOME` (see the `~/.profile.d` loop in `zsh/.profile`).
+
 ## Design
 - **No templating, no state.** `ls -l ~` shows what's managed. Two OS-specific lines (brew prefix) are a shell loop.
 - **Machine/employer-specific config** goes in `~/.profile.d/*.sh` — tracked in another repo or not at all.
