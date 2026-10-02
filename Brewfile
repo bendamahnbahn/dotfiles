@@ -1,8 +1,9 @@
 tap "anomalyco/tap"
 tap "derailed/k9s"
 tap "jandedobbeleer/oh-my-posh"
+tap "swamp-club/tap"
 
-brew "android-platform-tools"
+cask "android-platform-tools" if OS.mac?   # cask-only now; Linux keeps apt adb
 # The AI coding agent built for the terminal.
 brew "anomalyco/tap/opencode", trusted: true
 # Load/unload environment variables based on $PWD
@@ -18,7 +19,7 @@ brew "gnupg"
 brew "helm"
 # Agent multiplexer that lives in your terminal
 brew "herdr"
-brew "jandedobbeleer/oh-my-posh/oh-my-posh"
+brew "jandedobbeleer/oh-my-posh/oh-my-posh", trusted: true
 brew "k9s"
 # Template-free customization of Kubernetes YAML manifests
 brew "kustomize"
@@ -37,3 +38,5 @@ brew "tmux"
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
 brew "yq"
 brew "zsh"
+# AI Native Automation CLI
+brew "swamp-club/tap/swamp", trusted: true
