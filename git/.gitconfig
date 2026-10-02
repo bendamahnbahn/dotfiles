@@ -6,7 +6,8 @@
 [includeIf "gitdir:~/dev/"]
 	path = ~/.gitconfig-personal
 
-[includeIf "gitdir:~/bethel/"]
-	path = ~/.gitconfig-bethel
+# employer/machine-specific identities live in an untracked or separately-managed file; missing = ignored
+[include]
+	path = ~/.gitconfig-local
 [safe]
 	directory = /src

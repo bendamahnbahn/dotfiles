@@ -42,7 +42,7 @@ into the same `$HOME` (see the `~/.profile.d` loop in `zsh/.profile`).
 apply step: `ls -la ~` *is* the state. Symlink into this repo → managed. Regular file → not.
 
 **Edit a managed file:** just edit it (`vim ~/.profile` edits the repo file through the link), then
-`git commit` here. Bethel-specific lines go in `~/.profile.d/00-vault.sh` (private repo) instead.
+`git commit` here. Employer-specific lines go in `~/.profile.d/*.sh` (separate private repo) instead.
 
 **Start managing a new file** (example `~/.config/lazygit/config.yml`):
 ```sh
