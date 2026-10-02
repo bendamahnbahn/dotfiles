@@ -1,5 +1,4 @@
 tap "anomalyco/tap"
-tap "derailed/k9s"
 tap "jandedobbeleer/oh-my-posh"
 tap "swamp-club/tap"
 
