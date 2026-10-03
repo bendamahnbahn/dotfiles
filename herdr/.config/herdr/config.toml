@@ -20,7 +20,7 @@ focus_pane_up = "prefix+k"        # tmux: bind -r k select-pane -U
 focus_pane_right = "prefix+l"     # tmux: bind -r l select-pane -R
 
 # Splits (matching tmux splits)
-split_vertical = "prefix+shift+backslash" # tmux: bind | split-window -h
+split_vertical = "prefix+shift+slash" # tmux: bind | split-window -h
 split_horizontal = "prefix+minus" # tmux: bind - split-window -v
 
 # Window/Tab management (mapped to tmux equivalents)
