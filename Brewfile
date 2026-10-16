@@ -5,8 +5,12 @@ tap "swamp-club/tap"
 cask "android-platform-tools" if OS.mac?   # cask-only now; Linux keeps apt adb
 # The AI coding agent built for the terminal.
 brew "anomalyco/tap/opencode", trusted: true
+# Implementation of the DNS protocols (provides dig)
+brew "bind"
 # Load/unload environment variables based on $PWD
 brew "direnv"
+# Define and run multi-container apps (compose provider for docker/podman)
+brew "docker-compose"
 brew "ffmpeg"
 brew "git"
 # Audit git repos for secrets
@@ -39,3 +43,4 @@ brew "yq"
 brew "zsh"
 # AI Native Automation CLI
 brew "swamp-club/tap/swamp", trusted: true
+

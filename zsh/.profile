@@ -31,6 +31,16 @@ export PATH="$HOME/go/bin:$PATH"
 
 alias opencodeconfig="vim ~/.config/opencode/opencode.jsonc"
 
+# Use podman as a drop-in for docker (compose provider wired via ~/.docker/cli-plugins)
+command -v podman >/dev/null && ! command -v docker >/dev/null && alias docker="podman"
+
+# Wire brew's docker-compose in as the compose provider for podman/docker
+if command -v brew >/dev/null && [ ! -e "$HOME/.docker/cli-plugins/docker-compose" ] \
+    && [ -x "$(brew --prefix)/bin/docker-compose" ]; then
+    mkdir -p "$HOME/.docker/cli-plugins"
+    ln -sf "$(brew --prefix)/bin/docker-compose" "$HOME/.docker/cli-plugins/docker-compose"
+fi
+
 # employer-/machine-specific: everything in ~/.profile.d is sourced, tracked or not
 for f in "$HOME"/.profile.d/*.sh; do
     [ -r "$f" ] && . "$f"
