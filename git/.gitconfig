@@ -11,3 +11,5 @@
 	path = ~/.gitconfig-local
 [safe]
 	directory = /src
+[push]
+	autoSetupRemote = true
